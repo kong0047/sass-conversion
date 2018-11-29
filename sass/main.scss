@@ -1,1 +1,154 @@
-// main SASS file
+//main SASS file
+@import "_variables.scss";
+@import"_mixins.scss";
+/***********************************************
+                COLOUR NOTES
+light blue  #C7F7FF
+med blue    #89C0C9
+dark blue   #3a5E63
+
+light brown #C9A689
+dark brown  #7C593C
+
+light grey  #d4d4d4
+dark grey   #222
+
+                DEFAULTS
+***********************************************/
+*{
+    padding:0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+&:after,
+&:before{
+    @include border-box;
+}
+}
+html{
+    font-size: 16px;
+    font-family: $font_family_de; /* default for whole page */
+    line-height: 1.6;
+    font-weight: 400;
+}
+h1, h2, h3, h4{
+    font-weight: 700;
+    font-family: $font_family_header; /* serif for the headings */
+}
+ul{
+    list-style: none;
+}
+/***********************************************
+                SPECIAL
+***********************************************/
+
+
+
+/***********************************************
+                LAYOUT
+***********************************************/
+.bg-header{
+    @include colours($bg_header_b_color,$bg_header_color);
+    
+    border-bottom: 1rem solid $border_bottom_color;
+    border-top: 1rem solid $border_top_color;
+    position: relative;
+
+&:before,
+&:after{ 
+    content:"";
+    position:absolute;
+    bottom:-1rem;
+    height:1rem;
+    width:30%;
+    background-color:$after_b_color;
+    }
+&:before{
+    left:0;}
+&:after{
+    right:0;}
+}
+
+.bg-focal{
+    background-color: #C9A689;
+    color: #7C593C;
+}
+.bg-content1{
+    background-color: #fff;
+    color: #222;
+    font-weight: 100;
+}
+.bg-content2{
+    background-color: #C7F7FF;
+    color: #3a5E63;
+    font-weight: 100;
+}
+.bg-footer{
+    background-color: #fff;
+    color: #d4d4d4;
+}
+header{
+    width: 400px; /* default min screen width */
+    margin: 0 auto;
+    position: relative;
+}
+header h1{
+    width: 100%;
+    padding: 0 2rem;
+}
+header nav{
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* mobile first */
+    justify-content: flex-start;
+    align-items: stretch;
+    padding:2rem 0;
+}
+header nav > a{
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+section.focal{
+    width: 400px; /* default */
+    margin: 0 auto;
+}
+section.content1{
+    padding: 2rem 0;
+}
+section.content2{
+    padding:2rem 0;    
+}
+.row{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:stretch;
+}
+.row .col{
+    flex-basis: 100%; /* mobile default */
+}
+
+footer .row{
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+footer .row > *{
+    flex-basis: 50%;
+    padding-bottom: 2rem;
+    border-left:1px solid #3a5E63;
+    margin-bottom: 2rem;
+}
+footer .row.last-row > *{
+    flex-basis: 100%;
+}
+footer .row .col:first-child{
+    border-left: 0;
+}
+footer{
+    padding:2rem 0;
+}

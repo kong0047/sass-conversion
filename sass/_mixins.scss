@@ -1,0 +1,11 @@
+@mixin border-box{
+  -webkit-box-sizing:inherit;
+    box-sizing: inherit;
+    
+}
+
+@mixin colours($bg_header_b_color,$bg_header_color){
+   background-color:  $bg_header_b_color;
+    color:$bg_header_color;  
+    
+}
