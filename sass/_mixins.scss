@@ -1,11 +1,45 @@
+/***********************************************
+               DEFAULTS
+***********************************************/
+
 @mixin border-box{
   -webkit-box-sizing:inherit;
     box-sizing: inherit;
     
 }
 
-@mixin colours($bg_header_b_color,$bg_header_color){
-   background-color:  $bg_header_b_color;
-    color:$bg_header_color;  
+/***********************************************
+                LAYOUT
+***********************************************/
+@mixin colours($white,$light_blue,$dark_grey){
+   background-color: $white;
+    background-color: $light_blue;
+    color:$dark_grey;  
     
 }
+/***********************************************
+                NAVIGATION
+***********************************************/
+
+@mixin nav_color($dark_grey, $light_grey,$bg_header_b_color1){
+    
+    color:$dark_grey; 
+    border-color: $light_grey;
+    background-color: $bg_header_b_color1;
+    
+}
+    
+/***********************************************
+                CONTENT
+***********************************************/
+
+@mixin content_h_fontsize($content_h_fontsize){
+    font-size: $content_h_fontsize;
+}
+
+@mixin content2_fontsize($content2_fontsize){
+    font-size: $content2_fontsize;
+}
+    
+    
+    
